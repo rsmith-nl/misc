@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2014-07-12 01:38:08 +0200
-# Last modified: 2015-09-05 14:16:52 +0200
+# Last modified: 2015-09-08 00:11:18 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to htmlcolor.py. This work is published
@@ -12,8 +12,9 @@
 """Conversion routines for HTML colors."""
 
 
-def rbg2html(r, g, b):
-    """Converts an RGB color to a HTML color string.
+def rgb2html(r, g, b):
+    """
+    Converts an RGB color to a HTML color string.
     All the arguments are clamped to the appropriate range for their type.
 
     Arguments:
@@ -26,17 +27,6 @@ def rbg2html(r, g, b):
 
     Exceptions:
         Raises a ValueError if any of the arguments is not an int or a float.
-
-    >>> rbg2html(0,0,0)
-    '#000000'
-    >>> rbg2html(1.0,0,0)
-    '#ff0000'
-    >>> rbg2html(1.0,1.0,0)
-    '#ffff00'
-    >>> rbb2html(1.0,1.0,1.0)
-    '#ffffff'
-    >>> rbg2html(255,255,255)
-    '#ffffff'
     """
     def chkarg(a):
         if isinstance(a, int):  # clamp to range 0--255
