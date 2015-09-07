@@ -4,13 +4,18 @@ Miscellaneous modules
 :date: 2015-09-05
 :author: Roland Smith
 
-.. Last modified: 2015-09-05 17:23:23 +0200
+.. Last modified: 2015-09-08 00:06:33 +0200
 
 Introduction
 ============
 
 This is a collection of small utilities that are not big enough to warrant
 a separate repository.
+
+The subdirectory ``tests`` contains tests for this code. Running the tests
+requires nose_.
+
+.. _nose: https://nose.readthedocs.org/en/latest/
 
 
 Contents
@@ -22,20 +27,24 @@ erase.py
 Script to erase a file by overwriting it with zeroes. The file is renamed to
 a random base64 encoded name and then deleted.
 
+
 filedate.py
 -----------
 
 The ``fcdate`` function returns the creation date of a file as a string.
+
 
 hertz.py
 --------
 
 Calculates Hertz contact stresses.
 
+
 htmlcolor.py
 ------------
 
 The function ``rgb2html`` converts an RGB color into a HTML color reference.
+
 
 nameddict.py
 ------------
@@ -57,15 +66,18 @@ dict values as attributes by “dot-notation”;
     In [8]: d['a']
     Out[8]: 1
 
+
 postfix.py
 ----------
 
 The ``postfix`` function evaluates postfix expressions.
 
+
 tempname.py
 -----------
 
 The ``tempname`` function creates a name for a temporary file.
+
 
 xpand.py
 --------
