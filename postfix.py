@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2014-08-03 12:56:45 +0200
-# Last modified: 2015-09-07 23:54:06 +0200
+# Last modified: 2015-09-13 06:46:42 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to postfix.py. This work is published
@@ -25,7 +25,7 @@ _constk = tuple(_consts.keys())
 
 def postfix(expr):
     """Evaluate a postfix expression.
-    Numbers should be separated by spaces.
+    Numbers and operators should be separated by whitespace.
 
     Arguments:
         expr: The expression to evaluate.
