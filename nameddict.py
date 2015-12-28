@@ -3,8 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2014-12-05 23:55:16 +0100
-# $Date: 2015-04-10 08:47:11 +0200 $
-# $Revision: ded317d $
+# Last modified: 2015-12-28 22:10:53 +0100
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to struct.py. This work is published
