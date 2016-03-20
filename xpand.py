@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2013-08-13 23:13:48 +0200
-# Last modified: 2015-09-05 14:25:16 +0200
+# Last modified: 2016-03-20 11:45:24 +0100
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to xpand.py. This work is published
@@ -18,8 +18,11 @@ def xpand(args):
     """Expand command line arguments for operating systems incapable of doing
     so.
 
-    :param args: string or list of strings
-    :returns: expanded argument list of strings
+    Arguments:
+        args: String or list of strings.
+
+    Returns:
+        Expanded argument list of strings.
     """
     if isinstance(args, str):
         args = [args]
