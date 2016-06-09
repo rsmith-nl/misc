@@ -3,20 +3,16 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2015-09-08 00:07:58 +0200
-# Last modified: 2015-09-08 00:15:58 +0200
+# Last modified: 2016-06-10 00:05:06 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to test_htmlcolor.py. This work is published
 # from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
 
-"""Tests for the htmlcolor module.
-
-Run this test only with nosetests-3.4 -v test_htmlcolor.py
-Run all tests with: nosetests-3.4 -v test_*
-"""
+"""Tests for the htmlcolor module."""
 
 from htmlcolor import rgb2html
-from nose.tools import raises
+import pytest
 
 
 def test_rgb():
@@ -27,6 +23,6 @@ def test_rgb():
     assert rgb2html(255, 255, 255) == '#ffffff'
 
 
-@raises(ValueError)
 def test_illegal_values():
-    rgb2html(12, 234, 'a')
+    with pytest.raises(ValueError):
+        rgb2html(12, 234, 'a')

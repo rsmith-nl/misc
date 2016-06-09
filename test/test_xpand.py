@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2015-09-13 12:13:31 +0200
-# Last modified: 2015-09-13 12:19:23 +0200
+# Last modified: 2016-06-10 00:07:42 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to text_xpand.py. This work is published
@@ -19,8 +19,13 @@ from xpand import xpand
 
 
 def test_xpand():
-    assert xpand('../h*') == ['../htmlcolor.py', '../hertz.py']
-    assert xpand('foo') == ['foo']
+    rv = xpand('h*')
+    assert rv == ['htmlcolor.py', 'hertz.py']
+    rv = xpand('foo')
+    assert rv == ['foo']
+    rv = xpand([])
     assert xpand([]) == []
-    assert xpand('') == ['']
-    assert xpand(['']) == ['']
+    rv = xpand('')
+    assert rv == ['']
+    rv = xpand([''])
+    assert rv == ['']

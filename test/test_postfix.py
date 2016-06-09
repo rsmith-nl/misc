@@ -3,21 +3,17 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2015-09-07 23:17:26 +0200
-# Last modified: 2015-09-08 00:03:00 +0200
+# Last modified: 2016-06-10 00:09:24 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to test_postfix.py. This work is published
 # from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
 
-"""Tests for the postfix module.
-
-Run this test only with nosetests-3.4 -v test_postfix.py
-Run all tests with: nosetests-3.4 -v test_*
-"""
+"""Tests for the postfix module."""
 
 from math import pi
 from postfix import postfix
-from nose.tools import raises
+import pytest
 
 
 def test_binops():
@@ -45,11 +41,11 @@ def test_multiple():
     assert postfix('48 8 / 3 + 7 *') == 63
 
 
-@raises(ValueError)
 def test_emptyexpr():
-    postfix('')
+    with pytest.raises(ValueError):
+        postfix('')
 
 
-@raises(ValueError)
 def test_emptystack():
-    postfix('1 2 + /')
+    with pytest.raises(ValueError):
+        postfix('1 2 + /')
