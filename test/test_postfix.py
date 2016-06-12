@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2015-09-07 23:17:26 +0200
-# Last modified: 2016-06-10 00:09:24 +0200
+# Last modified: 2016-06-12 08:47:16 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to test_postfix.py. This work is published
@@ -42,10 +42,15 @@ def test_multiple():
 
 
 def test_emptyexpr():
-    with pytest.raises(ValueError):
+    with pytest.raises(IndexError):
         postfix('')
 
 
 def test_emptystack():
     with pytest.raises(ValueError):
         postfix('1 2 + /')
+
+
+def test_zerodiv():
+    with pytest.raises(ZeroDivisionError):
+        postfix('3 0 /')
