@@ -4,7 +4,7 @@ Miscellaneous modules
 :date: 2015-09-05
 :author: Roland Smith
 
-.. Last modified: 2015-09-08 00:06:33 +0200
+.. Last modified: 2017-09-11 03:00:49 +0200
 
 Introduction
 ============
@@ -21,17 +21,17 @@ requires nose_.
 Contents
 ========
 
-erase.py
---------
-
-Script to erase a file by overwriting it with zeroes. The file is renamed to
-a random base64 encoded name and then deleted.
-
 
 filedate.py
 -----------
 
 The ``fcdate`` function returns the creation date of a file as a string.
+
+
+group
+-----
+
+The ``subgroup`` function split an iterat up into a list of sub-iterators.
 
 
 hertz.py
@@ -67,10 +67,23 @@ dict values as attributes by “dot-notation”;
     Out[8]: 1
 
 
+pdfinfo
+-------
+
+The ``pdfinfo`` function extracts the Info Dictionary from a PDF file.
+
+
 postfix.py
 ----------
 
 The ``postfix`` function evaluates postfix expressions.
+
+
+services
+--------
+
+The ``services`` function returns a dict describing the defined services,
+indexed by port number.
 
 
 tempname.py
