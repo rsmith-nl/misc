@@ -1,9 +1,9 @@
 # file: tempname.py
-# vim:fileencoding=utf-8:ft=python
+# vim:fileencoding=utf-8:ft=python:fdm=marker
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2013-11-11 22:47:29 +0100
-# Last modified: 2016-03-20 12:55:33 +0100
+# Last modified: 2017-09-11 02:49:14 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to tempname.py. This work is published
@@ -15,7 +15,7 @@ import base64
 import os
 
 
-def tempname(ext=None, num=None):
+def tempname(ext=None, num=None):  # {{{1
     """Create a name for a temporary file.
 
     Arguments:
@@ -35,6 +35,6 @@ def tempname(ext=None, num=None):
     return bn
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # Test {{{1
     print(tempname())
     print(tempname('foo'))

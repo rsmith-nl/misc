@@ -1,9 +1,9 @@
 # file: htmlcolor.py
-# vim:fileencoding=utf-8:ft=python
+# vim:fileencoding=utf-8:ft=python:fdm=marker
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2014-07-12 01:38:08 +0200
-# Last modified: 2015-09-08 00:11:18 +0200
+# Last modified: 2017-09-11 02:47:23 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to htmlcolor.py. This work is published
@@ -12,7 +12,7 @@
 """Conversion routines for HTML colors."""
 
 
-def rgb2html(r, g, b):
+def rgb2html(r, g, b):  # {{{1
     """
     Converts an RGB color to a HTML color string.
     All the arguments are clamped to the appropriate range for their type.

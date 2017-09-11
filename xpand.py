@@ -1,9 +1,9 @@
 # file: xpand.py
-# vim:fileencoding=utf-8:ft=python
+# vim:fileencoding=utf-8:ft=python:fmd=marker
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2013-08-13 23:13:48 +0200
-# Last modified: 2016-03-20 11:45:24 +0100
+# Last modified: 2017-09-11 02:49:55 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to xpand.py. This work is published
@@ -14,7 +14,7 @@
 import glob
 
 
-def xpand(args):
+def xpand(args):  # {{{1
     """Expand command line arguments for operating systems incapable of doing
     so.
 

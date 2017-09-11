@@ -1,9 +1,9 @@
 # file: postfix.py
-# vim:fileencoding=utf-8:ft=python
+# vim:fileencoding=utf-8:ft=python:fdm=marker
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2014-08-03 12:56:45 +0200
-# Last modified: 2016-06-12 08:32:15 +0200
+# Last modified: 2017-09-11 02:46:45 +0200
 #
 # To the extent possible under law, R.F. Smith has waived all copyright and
 # related or neighboring rights to postfix.py. This work is published
@@ -12,6 +12,7 @@
 import operator
 import math
 
+# Global constants {{{1
 _add, _sub, _mul = operator.add, operator.sub, operator.mul
 _truediv, _pow, _sqrt = operator.truediv, operator.pow, math.sqrt
 _sin, _cos, _tan, _radians = math.sin, math.cos, math.tan, math.radians
@@ -28,7 +29,7 @@ _consts = {'e': _e, 'pi': _pi}
 _ckeys = tuple(_consts.keys())
 
 
-def postfix(expression):
+def postfix(expression):  # {{{1
     """
     Evaluate a postfix expression.
 
