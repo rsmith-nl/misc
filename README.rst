@@ -4,7 +4,7 @@ Miscellaneous modules
 :date: 2015-09-05
 :author: Roland Smith
 
-.. Last modified: 2017-09-11 03:00:49 +0200
+.. Last modified: 2017-09-16 23:50:53 +0200
 
 Introduction
 ============
@@ -13,9 +13,21 @@ This is a collection of small utilities that are not big enough to warrant
 a separate repository.
 
 The subdirectory ``tests`` contains tests for this code. Running the tests
-requires nose_.
+requires nose_ or pytest_.
 
 .. _nose: https://nose.readthedocs.org/en/latest/
+.. _pytest: https://docs.pytest.org/en/latest/
+
+Running the tests from the ``misc`` directory using ``tcsh`` done as follows.
+
+.. code-block:: console
+
+    # in tcsh
+    env PYTHONPATH=. pytest-3.6 test/
+    # in a POSIX shell
+    PYTHONPATH=. pytest-3.6 test/
+
+(Adjust the name for the ``pytest`` program according to your environment.)
 
 
 Contents
@@ -26,6 +38,13 @@ filedate.py
 -----------
 
 The ``fcdate`` function returns the creation date of a file as a string.
+
+.. code-block:: python
+
+    In [2]: from filedate import fcdate
+
+    In [3]: fcdate('README.rst')
+    Out[3]: '2015-09-05 14:29:54 +0200'
 
 
 group
@@ -78,12 +97,31 @@ postfix.py
 
 The ``postfix`` function evaluates postfix expressions.
 
+.. code-block:: python
+
+    In [1]: from postfix import postfix
+
+    In [2]: postfix('3 2 ** 1 -')
+    Out[2]: 8.0
+
 
 services
 --------
 
 The ``services`` function returns a dict describing the defined services,
 indexed by port number.
+
+.. code-block:: python
+
+    In [2]: from services import services
+
+    In [3]: data = services()
+
+    In [4]: data[80]
+    Out[4]: 'http'
+
+    In [5]: data[22]
+    Out[5]: 'ssh'
 
 
 tempname.py
