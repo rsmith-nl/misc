@@ -1,13 +1,10 @@
 # file: filedate.py
-# vim:fileencoding=utf-8:ft=python
+# vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Author: R.F. Smith <rsmith@xs4all.nl>
-# Created: 2014-12-17 23:30:49 +0100
-# Last modified: 2018-04-08 13:06:53 +0200
-#
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to filedate.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
+# Copyright © 2014-2018 R.F. Smith <rsmith@xs4all.nl>.
+# SPDX-License-Identifier: MIT
+# Created: 2014-12-17T23:30:49+0100
+# Last modified: 2018-04-17T20:47:32+0200
 
 from datetime import datetime
 import os

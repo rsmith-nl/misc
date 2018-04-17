@@ -1,13 +1,10 @@
 # file: group.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Author: R.F. Smith <rsmith@xs4all.nl>
-# Created: 2014-08-01 13:31:09 +0200
-# Last modified: 2017-09-11 02:53:10 +0200
-#
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to group.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
+# Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
+# SPDX-License-Identifier: MIT
+# Created: 2014-08-01T13:31:09+0200
+# Last modified: 2018-04-17T20:48:39+0200
 """Group an interator into sub-iterators."""
 
 __version__ = '0.1.1'

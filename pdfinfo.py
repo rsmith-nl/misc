@@ -1,13 +1,10 @@
 # file: pdfinfo.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Author: R.F. Smith <rsmith@xs4all.nl>
-# Created: 2017-09-10 16:53:54 +0200
-# Last modified: 2017-09-11 02:41:40 +0200
-#
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to pdfinfo.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
+# Copyright © 2017 R.F. Smith <rsmith@xs4all.nl>.
+# SPDX-License-Identifier: MIT
+# Created: 2017-09-10T16:53:54+0200
+# Last modified: 2018-04-17T20:43:11+0200
 """Retrieve info dictionary from a PDF file."""
 
 from datetime import datetime as dt
@@ -22,6 +19,7 @@ def pdfinfo(path):  # {{{1
 
     The information is converted to a Python dictionary.
     The values are converted to a suitable format.
+    Requires the “pdfinfo” program.
 
     Arguments:
         path: String that indicates the location of the PDF file.

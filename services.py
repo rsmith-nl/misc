@@ -1,13 +1,10 @@
 # file: services.py
-# vim:fileencoding=utf-8:ft=python:fdm=marker
+# vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Author: R.F. Smith <rsmith@xs4all.nl>
-# Created: 2015-09-05 19:01:04 +0200
-# Last modified: 2017-09-11 02:48:37 +0200
-#
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to services.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
+# Copyright © 2015-2017 R.F. Smith <rsmith@xs4all.nl>.
+# SPDX-License-Identifier: MIT
+# Created: 2015-09-05T19:01:04+0200
+# Last modified: 2018-04-17T20:44:27+0200
 
 import re
 

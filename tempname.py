@@ -1,14 +1,10 @@
 # file: tempname.py
-# vim:fileencoding=utf-8:ft=python:fdm=marker
+# vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Author: R.F. Smith <rsmith@xs4all.nl>
-# Created: 2013-11-11 22:47:29 +0100
-# Last modified: 2017-09-11 02:49:14 +0200
-#
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to tempname.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
-
+# Copyright © 2018 R.F. Smith <rsmith@xs4all.nl>.
+# SPDX-License-Identifier: MIT
+# Created: 2013-11-11T22:47:29+0100
+# Last modified: 2018-04-17T20:45:03+0200
 """Module to create a temporary filename."""
 
 import base64

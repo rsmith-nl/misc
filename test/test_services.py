@@ -5,9 +5,6 @@
 # Created: 2015-09-08 22:19:05 +0200
 # Last modified: 2016-06-10 00:09:47 +0200
 #
-# To the extent possible under law, R.F. Smith has waived all copyright and
-# related or neighboring rights to test_services.py. This work is published
-# from the Netherlands. See http://creativecommons.org/publicdomain/zero/1.0/
 
 """Tests for the services module."""
 
