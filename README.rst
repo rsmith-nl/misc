@@ -4,7 +4,7 @@ Miscellaneous modules
 :date: 2015-09-05
 :author: Roland Smith
 
-.. Last modified: 2017-09-16 23:50:53 +0200
+.. Last modified: 2018-04-21T19:28:40+0200
 
 Introduction
 ============
@@ -34,6 +34,14 @@ Contents
 ========
 
 
+colortemp.py
+------------
+
+The ``cct`` function converts 8-bit RGB color to a correlated color temperature.
+The ``lux`` function coverts 8-bit RGB to illuminance in Lux.
+
+
+
 filedate.py
 -----------
 
@@ -47,8 +55,23 @@ The ``fcdate`` function returns the creation date of a file as a string.
     Out[3]: '2015-09-05 14:29:54 +0200'
 
 
-group
------
+findnumbers.py
+--------------
+
+Splits a line and returns the items in two tuples;
+
+* numbers
+* the remaining words
+
+
+fmtnum.py
+---------
+
+Formats a number with a numeric prefix and optionally a unit.
+
+
+group.py
+--------
 
 The ``subgroup`` function split an iterat up into a list of sub-iterators.
 
@@ -63,6 +86,15 @@ htmlcolor.py
 ------------
 
 The function ``rgb2html`` converts an RGB color into a HTML color reference.
+
+
+mean_deviation.py
+-----------------
+
+The two functions comput the absolute mean deviation of data. See `the
+advantages of the mean deviation`_.
+
+.. _the advantages of the mean deviation: http://www.leeds.ac.uk/educol/documents/00003759.htm
 
 
 nameddict.py
@@ -86,8 +118,8 @@ dict values as attributes by “dot-notation”;
     Out[8]: 1
 
 
-pdfinfo
--------
+pdfinfo.py
+----------
 
 The ``pdfinfo`` function extracts the Info Dictionary from a PDF file.
 
@@ -105,8 +137,14 @@ The ``postfix`` function evaluates postfix expressions.
     Out[2]: 8.0
 
 
-services
---------
+rawbytes.py
+-----------
+
+The ``rawbytes`` function converts a string to bytes without encoding.
+
+
+services.py
+-----------
 
 The ``services`` function returns a dict describing the defined services,
 indexed by port number.
