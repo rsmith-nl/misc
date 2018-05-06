@@ -16,11 +16,24 @@ _sin, _cos, _tan, _radians = math.sin, math.cos, math.tan, math.radians
 _asin, _acos, _atan = math.asin, math.acos, math.atan
 _degrees, _log, _log10 = math.degrees, math.log, math.log10
 _e, _pi = math.e, math.pi
-_ops = {'+': (2, _add), '-': (2, _sub), '*': (2, _mul), '/': (2, _truediv),
-        '**': (2, _pow), 'sin': (1, _sin), 'cos': (1, _cos), 'tan': (1, _tan),
-        'asin': (1, _asin), 'acos': (1, _acos), 'atan': (1, _atan),
-        'sqrt': (1, _sqrt), 'rad': (1, _radians), 'deg': (1, _degrees),
-        'ln': (1, _log), 'log': (1, _log10)}
+_ops = {
+    '+': (2, _add),
+    '-': (2, _sub),
+    '*': (2, _mul),
+    '/': (2, _truediv),
+    '**': (2, _pow),
+    'sin': (1, _sin),
+    'cos': (1, _cos),
+    'tan': (1, _tan),
+    'asin': (1, _asin),
+    'acos': (1, _acos),
+    'atan': (1, _atan),
+    'sqrt': (1, _sqrt),
+    'rad': (1, _radians),
+    'deg': (1, _degrees),
+    'ln': (1, _log),
+    'log': (1, _log10)
+}
 _okeys = tuple(_ops.keys())
 _consts = {'e': _e, 'pi': _pi}
 _ckeys = tuple(_consts.keys())

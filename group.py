@@ -20,7 +20,7 @@ def subgroup(it, n):  # {{{1
     Returns:
         A list of sub-iterators.
     """
-    return [it[i:i+n] for i in range(0, len(it), n)]
+    return [it[i:i + n] for i in range(0, len(it), n)]
 
 
 if __name__ == '__main__':  # Test {{{1

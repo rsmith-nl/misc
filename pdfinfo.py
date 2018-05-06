@@ -39,7 +39,6 @@ def pdfinfo(path):  # {{{1
     for key in keys & ('File size', 'Pages', 'Page rot'):
         info[key] = int(info[key].split()[0])
     # Convert quitable values to boolean
-    for key in keys & ('Encrypted', 'JavaScript', 'Optimized', 'Suspects',
-                       'Tagged'):
+    for key in keys & ('Encrypted', 'JavaScript', 'Optimized', 'Suspects', 'Tagged'):
         info[key] = info[key].split()[0] in ("yes", "true", "t", "1")
     return info

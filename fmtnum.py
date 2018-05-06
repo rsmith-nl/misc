@@ -28,16 +28,34 @@ def fmtnum(num, unit=''):
     T = (1e12, 'T')
     P = (1e15, 'P')
     E = (1e18, 'E')
-    table = {1: d, 2: h, 3: k, 4: k, 5: k, 6: M, 7: M, 8: M, 9: G, 10: G,
-             11: G, 12: T, 13: T, 14: T, 15: P, 16: P, 17: P, 18: E}
+    table = {
+        1: d,
+        2: h,
+        3: k,
+        4: k,
+        5: k,
+        6: M,
+        7: M,
+        8: M,
+        9: G,
+        10: G,
+        11: G,
+        12: T,
+        13: T,
+        14: T,
+        15: P,
+        16: P,
+        17: P,
+        18: E
+    }
     num = float(num)
     exp = math.log10(num)
     if num < 0:
-        exp = int(exp)-1
+        exp = int(exp) - 1
     else:
         exp = int(exp)
     try:
         denum, suffix = table[exp]
-        return '{:g} {}{}'.format(num/denum, suffix, unit)
+        return '{:g} {}{}'.format(num / denum, suffix, unit)
     except KeyError:
         return '{:g}'.format(num)

@@ -24,6 +24,7 @@ def rgb2html(r, g, b):  # {{{1
     Exceptions:
         Raises a ValueError if any of the arguments is not an int or a float.
     """
+
     def chkarg(a):
         if isinstance(a, int):  # clamp to range 0--255
             if a < 0:
@@ -36,10 +37,11 @@ def rgb2html(r, g, b):  # {{{1
             elif a > 1.0:
                 a = 255
             else:
-                a = int(round(a*255))
+                a = int(round(a * 255))
         else:
             raise ValueError('Arguments must be integers or floats.')
         return a
+
     r = chkarg(r)
     g = chkarg(g)
     b = chkarg(b)

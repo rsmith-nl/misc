@@ -23,10 +23,10 @@ def cylinder_cylinder(F, L, D1, D2, E1, E2):
     Returns:
         Maximum contact pressure, e.g. in [MPa]
     """
-    A = F/(2.86*L)
-    B = (D1 + D2)/(D1*D2)
-    C = 2*E1*E2/(E1 + E2)
-    Pmax = math.sqrt(A*B*C)
+    A = F / (2.86 * L)
+    B = (D1 + D2) / (D1 * D2)
+    C = 2 * E1 * E2 / (E1 + E2)
+    Pmax = math.sqrt(A * B * C)
     return Pmax
 
 
@@ -44,8 +44,8 @@ def cylinder_plane(F, L, D1, E1, E2):
     Returns:
         Maximum contact pressure, e.g. in [MPa]
     """
-    A = F/(2.86*L)
-    B = 1/D1
-    C = 2*E1*E2/(E1 + E2)
-    Pmax = math.sqrt(A*B*C)
+    A = F / (2.86 * L)
+    B = 1 / D1
+    C = 2 * E1 * E2 / (E1 + E2)
+    Pmax = math.sqrt(A * B * C)
     return Pmax
