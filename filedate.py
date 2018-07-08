@@ -4,7 +4,7 @@
 # Copyright © 2014-2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-17T23:30:49+0100
-# Last modified: 2018-04-17T20:47:32+0200
+# Last modified: 2018-07-08T11:43:40+0200
 
 from datetime import datetime
 import os
@@ -16,7 +16,7 @@ _here = timezone('Europe/Amsterdam')
 
 def fcdate(name, tz=_here):
     """
-    Get the creation date of a file formatted as a string.
+    Get the creation date of a file.
 
     Arguments
         name: Name of the file to query.

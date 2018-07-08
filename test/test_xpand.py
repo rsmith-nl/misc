@@ -3,7 +3,7 @@
 #
 # Author: R.F. Smith <rsmith@xs4all.nl>
 # Created: 2015-09-13 12:13:31 +0200
-# Last modified: 2016-06-11 00:37:30 +0200
+# Last modified: 2018-07-08T11:47:26+0200
 #
 
 """Tests for the xpand module."""
@@ -13,7 +13,7 @@ from xpand import xpand
 
 def test_xpand():
     rv = xpand('h*')
-    assert rv == ['htmlcolor.py', 'hertz.py']
+    assert rv == ['htmlcolor.py', 'hertz.py', 'humidity.py']
     rv = xpand('foo')
     assert rv == ['foo']
     rv = xpand([])
