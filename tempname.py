@@ -4,7 +4,7 @@
 # Copyright © 2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2013-11-11T22:47:29+0100
-# Last modified: 2018-04-17T20:45:03+0200
+# Last modified: 2018-07-08T11:37:40+0200
 """Module to create a temporary filename."""
 
 import base64
@@ -23,7 +23,7 @@ def tempname(ext=None, num=None):  # {{{1
     """
     bn = base64.b64encode(os.urandom(12), b'__').decode()
     if num is not None and num > 0:
-        bn += '-{:03d}'.format(num)
+        bn += f'-{num:03d}'
     if ext:
         if not ext.startswith('.'):
             ext = '.' + ext

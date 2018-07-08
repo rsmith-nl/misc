@@ -4,7 +4,7 @@
 # Copyright © 2016 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2016-05-23T23:12:24+0200
-# Last modified: 2018-04-21T18:54:49+0200
+# Last modified: 2018-07-08T11:34:08+0200
 """Format numbers with metric prefixes."""
 
 import math
@@ -56,6 +56,7 @@ def fmtnum(num, unit=''):
         exp = int(exp)
     try:
         denum, suffix = table[exp]
-        return '{:g} {}{}'.format(num / denum, suffix, unit)
+        val = num / denum
+        return f'{val:g} {suffix}{unit}'
     except KeyError:
-        return '{:g}'.format(num)
+        return f'{num:g}'

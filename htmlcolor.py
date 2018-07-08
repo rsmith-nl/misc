@@ -4,7 +4,7 @@
 # Copyright © 2014-2017 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2015-04-01T22:23:24+0200
-# Last modified: 2018-04-17T20:41:24+0200
+# Last modified: 2018-07-08T11:35:20+0200
 """Conversion routines for HTML colors."""
 
 
@@ -45,4 +45,4 @@ def rgb2html(r, g, b):  # {{{1
     r = chkarg(r)
     g = chkarg(g)
     b = chkarg(b)
-    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+    return f'#{r:02x}{g:02x}{b:02x}'
