@@ -17,4 +17,4 @@ def absolute(T, rh):
         T (float): Temperature in °C.
         rh (float): Relative humidity in %.
     """
-    return 6.112 * exp(16.67*T/(T+243.5)) * rh * 2.1674 / (273.15 + T)
+    return 6.112 * exp(16.67 * T / (T + 243.5)) * rh * 2.1674 / (273.15 + T)
