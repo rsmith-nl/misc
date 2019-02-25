@@ -1,44 +1,35 @@
 # file: pdfinfo.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2017 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2017-2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2017-09-10T16:53:54+0200
-# Last modified: 2018-04-17T20:43:11+0200
+# Last modified: 2019-02-25T23:21:34+0100
 """Retrieve info dictionary from a PDF file."""
 
-from datetime import datetime as dt
 import subprocess as sp
-import re
+import types
 
-__version__ = '1.0.0'
+__version__ = '1.1'
 
 
 def pdfinfo(path):  # {{{1
-    """Retrieves the Info dictionary from a PDF file.
-
-    The information is converted to a Python dictionary.
-    The values are converted to a suitable format.
-    Requires the “pdfinfo” program.
+    """
+    Retrieves the contents of the ‘info’ dictionary from a PDF file using
+    the ``pdfinfo`` program.
 
     Arguments:
-        path: String that indicates the location of the PDF file.
+        path (str): The path to the PDF file to use.
 
     Returns:
-        A Python dictionary containing the file's info.
+        A types.SimpleNamespace containing the info dictionary.
     """
-    # Extract the info from a PDF file.
-    text = sp.check_output(['pdfinfo', path]).decode('utf-8')
-    # Convert info to a doctionary.
-    info = dict(re.findall('(.*)?:\s+(.*)?\s+', text, re.MULTILINE))
-    # Convert dates to datetime objects.
-    keys = info.keys()
-    for key in keys & ('CreationDate', 'ModDate'):
-        info[key] = dt.strptime(info[key], '%c %Z')
-    # Convert suitable values to integers
-    for key in keys & ('File size', 'Pages', 'Page rot'):
-        info[key] = int(info[key].split()[0])
-    # Convert quitable values to boolean
-    for key in keys & ('Encrypted', 'JavaScript', 'Optimized', 'Suspects', 'Tagged'):
-        info[key] = info[key].split()[0] in ("yes", "true", "t", "1")
-    return info
+    args = ['pdfinfo', path]
+    rv = sp.run(args, stdout=sp.PIPE, stderr=sp.DEVNULL)
+    if rv.returncode != 0:
+        return types.SimpleNamespace()
+    pairs = {
+        k.lower(): v.strip()
+        for k, v in [ln.split(':', 1) for ln in rv.stdout.decode('utf-8').splitlines()]
+    }
+    return types.SimpleNamespace(**pairs)
