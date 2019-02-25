@@ -4,7 +4,7 @@
 # Copyright © 2017-2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2017-09-10T16:53:54+0200
-# Last modified: 2019-02-25T23:21:34+0100
+# Last modified: 2019-02-25T23:24:33+0100
 """Retrieve info dictionary from a PDF file."""
 
 import subprocess as sp
@@ -24,8 +24,7 @@ def pdfinfo(path):  # {{{1
     Returns:
         A types.SimpleNamespace containing the info dictionary.
     """
-    args = ['pdfinfo', path]
-    rv = sp.run(args, stdout=sp.PIPE, stderr=sp.DEVNULL)
+    rv = sp.run(['pdfinfo', path], stdout=sp.PIPE, stderr=sp.DEVNULL)
     if rv.returncode != 0:
         return types.SimpleNamespace()
     pairs = {
