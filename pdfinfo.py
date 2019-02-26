@@ -4,13 +4,12 @@
 # Copyright © 2017-2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2017-09-10T16:53:54+0200
-# Last modified: 2019-02-25T23:24:33+0100
+# Last modified: 2019-02-26T18:56:11+0100
 """Retrieve info dictionary from a PDF file."""
 
 import subprocess as sp
-import types
 
-__version__ = '1.1'
+__version__ = '1.2'
 
 
 def pdfinfo(path):  # {{{1
@@ -22,13 +21,13 @@ def pdfinfo(path):  # {{{1
         path (str): The path to the PDF file to use.
 
     Returns:
-        A types.SimpleNamespace containing the info dictionary.
+        A dict containing the info dictionary, with the keys transformed to lower case.
     """
     rv = sp.run(['pdfinfo', path], stdout=sp.PIPE, stderr=sp.DEVNULL)
     if rv.returncode != 0:
-        return types.SimpleNamespace()
+        return {}
     pairs = {
         k.lower(): v.strip()
         for k, v in [ln.split(':', 1) for ln in rv.stdout.decode('utf-8').splitlines()]
     }
-    return types.SimpleNamespace(**pairs)
+    return pairs
