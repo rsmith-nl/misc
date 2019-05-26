@@ -4,14 +4,14 @@
 # Copyright © 2014-2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-17T23:30:49+0100
-# Last modified: 2018-07-08T11:43:40+0200
+# Last modified: 2019-05-26T17:46:59+0200
 
 from datetime import datetime
+from dateutil.tz import gettz
 import os
 import subprocess as sp
-from pytz import timezone
 
-_here = timezone('Europe/Amsterdam')
+_here = gettz('Europe/Amsterdam')
 
 
 def fcdate(name, tz=_here):
@@ -28,7 +28,7 @@ def fcdate(name, tz=_here):
     if not os.path.exists(name):
         return None
     if isinstance(tz, str):
-        tz = timezone(tz)
+        tz = gettz(tz)
     try:
         rv = datetime.fromtimestamp(os.stat(name).st_birthtime, tz)
     except OSError:
