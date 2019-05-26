@@ -4,14 +4,15 @@
 # Copyright © 2014-2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-17T23:30:49+0100
-# Last modified: 2019-05-26T17:46:59+0200
+# Last modified: 2019-05-26T18:51:40+0200
 
 from datetime import datetime
 from dateutil.tz import gettz
 import os
 import subprocess as sp
 
-_here = gettz('Europe/Amsterdam')
+# Get the local timezone.
+_here = gettz()
 
 
 def fcdate(name, tz=_here):
@@ -20,7 +21,7 @@ def fcdate(name, tz=_here):
 
     Arguments
         name: Name of the file to query.
-        tz: Local timezone. Defaults to Europe/Amsterdam
+        tz: Timezone. Defaults to the local timezone
 
     Returns:
         A datetime object.
