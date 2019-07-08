@@ -1,33 +1,55 @@
 # file: pdfinfo.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2017-2019 R.F. Smith <rsmith@xs4all.nl>.
-# SPDX-License-Identifier: MIT
-# Created: 2017-09-10T16:53:54+0200
-# Last modified: 2019-02-26T18:56:11+0100
-"""Retrieve info dictionary from a PDF file."""
+# Copyright © 2019 R.F. Smith <rsmith@xs4all.nl>
+# Created: 2019-07-08T02:24:59+0200
+# Last modified: 2019-07-08T19:19:06+0200
+"""Module to retrieve information from a PDF file."""
 
-import subprocess as sp
-
-__version__ = '1.2'
+import sys
+import logging
 
 
-def pdfinfo(path):  # {{{1
+def pdfinfo(path):
+    lookups = (b'/Author', b'/Creator', b'/Producer', b'/CreationDate', b'/ModDate')
+    logging.debug(f'reading {path}')
+    with open(path, 'rb') as f:
+        data = f.read()
+    # Find the trailer, and the Info reference in the trailer
+    istart = data.find(b'\ntrailer') + 8
+    istart = data.find(b'/Info', istart) + 6
+    iend = data.find(b'R', istart) - 1
+    # Extract the Info object number and generation
+    objid = data[istart:iend].strip()
+    logging.debug('Info object is ' + objid.decode('ascii'))
+    ostart = data.find(objid + b' obj')
+    ostart = data.find(b'<<', ostart) + 3
+    oend = data.find(b'>>', ostart)
+    # For now.
+    # return data[ostart:oend]
+    info = data[ostart:oend]
+    locations = [
+        (data.find(item), item.decode('ascii')) for item in lookups if item in info
+    ]
+    locations.sort(key=lambda i: i[0])
+    logging.debug('found ' + ' '.join(t[1] for t in locations))
+    return locations
+
+
+# Run a test.
+def _main(argv):
     """
-    Retrieves the contents of the ‘info’ dictionary from a PDF file using
-    the ``pdfinfo`` program.
+    Entry point for pdfinfo.py.
 
     Arguments:
-        path (str): The path to the PDF file to use.
-
-    Returns:
-        A dict containing the info dictionary, with the keys transformed to lower case.
+        argv: command line arguments
     """
-    rv = sp.run(['pdfinfo', path], stdout=sp.PIPE, stderr=sp.DEVNULL)
-    if rv.returncode != 0:
-        return {}
-    pairs = {
-        k.lower(): v.strip()
-        for k, v in [ln.split(':', 1) for ln in rv.stdout.decode('utf-8').splitlines()]
-    }
-    return pairs
+    logging.basicConfig(level='DEBUG', format='%% %(levelname)s: %(message)s')
+    for fn in argv:
+        logging.info(pdfinfo(fn))
+        print('-----------------------------------------')
+        sys.stdout.flush()
+
+
+if __name__ == '__main__':
+    _main(sys.argv[1:])
