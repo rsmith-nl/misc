@@ -4,7 +4,7 @@
 # Copyright © 2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2018-04-21T19:07:27+0200
-# Last modified: 2019-07-13T10:16:34+0200
+# Last modified: 2019-07-13T10:16:59+0200
 """
 Calculate the mean deviation of samples.
 
@@ -13,21 +13,20 @@ See http://www.leeds.ac.uk/educol/documents/00003759.htm
 This number is independent of the distribution.
 """
 
-import statistics as stat
+import numpy as np
 
 
-def amd(data):
+def amd(arr):
     """
-    Calculate the absolute mean deviation of a sequence of numbers.
-    This calculates the mean of the sequence. Then all distances to the mean.
-    It returns the mean of those distances
+    Calculate the absolute mean deviation of an array of numbers.
+    Starting from an array, we calculate the mean, and then take the absolute
+    value of the difference between the array and its mean.
+    We then calculate and return the mean value of this difference.
 
     Arguments:
-        data: A sequence of numbers.
+        arr (ndarray): input array
 
     Returns:
         The absolute mean deviation.
     """
-    m = stat.mean(data)
-    diff = [abs(n - m) for n in data]
-    return stat.mean(diff)
+    return np.mean(np.abs(arr - np.mean(arr)))
