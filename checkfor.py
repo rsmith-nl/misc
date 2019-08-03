@@ -4,11 +4,22 @@
 # Copyright © 2012-2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2012-12-13T01:39:03+01:00
-# Last modified: 2019-07-27T15:56:25+0200
+# Last modified: 2019-08-03T20:21:33+0200
 
 import logging
 import subprocess as sp
 import sys
+"""
+Note: I don't use this much anymore. The simpler solution is:
+
+progs = ['gs', 'gnuplot', 'pkg']
+try:
+    for p in progs:
+        sp.run([p], stdout=sp.DEVNULL, stderr=sp.DEVNULL)
+except FileNotFoundError:
+    logging.error(f'required program “{p}” not found')
+    sys.exit(1)
+"""
 
 
 def checkfor(args, rv=0):
