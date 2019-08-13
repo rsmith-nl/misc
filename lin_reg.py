@@ -4,7 +4,7 @@
 # Copyright © 2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2019-08-03T18:47:27+0200
-# Last modified: 2019-08-03T19:18:42+0200
+# Last modified: 2019-08-13T23:49:43+0200
 """Linear regression.
 
 Inspired by: http://www.codedrome.com/linear-regression-in-python/
@@ -38,7 +38,7 @@ def linear_regression(x, y):
     (0.4416491963661775, 63.19357092941999)
     """
     if len(x) != len(y):
-        raise ValueError('y data and iny data should have the same size')
+        raise ValueError('y data and x data should have the same size')
     x_mean = stat.mean(x)
     y_mean = stat.mean(y)
     prod_mean = sum(i*j for i, j in zip(x, y))/len(x)
