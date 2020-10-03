@@ -7,7 +7,7 @@
 # Last modified: 2019-08-08T23:05:41+0200
 """Group an iterator into sub-iterators."""
 
-__version__ = '0.3'
+__version__ = "2019.08.08"
 
 import itertools as it
 import functools as ft

@@ -9,7 +9,7 @@
 
 import subprocess as sp
 
-__version__ = '1.2'
+__version__ = "2019.02.26"
 
 
 def pdfinfo(path):  # {{{1
