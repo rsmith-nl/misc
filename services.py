@@ -9,7 +9,7 @@
 import re
 
 
-def services(filename='/etc/services'):  # {{{1
+def services(filename="/etc/services"):  # {{{1
     """
     Generate a dictionary of the available services from the services file,
     by default /etc/services.
@@ -22,5 +22,5 @@ def services(filename='/etc/services'):  # {{{1
     """
     with open(filename) as serv:
         data = serv.read()
-    matches = re.findall('\n(\S+)\s+(\d+)/', data)
+    matches = re.findall("\n(\S+)\s+(\d+)/", data)
     return {int(num): name for name, num in set(matches)}

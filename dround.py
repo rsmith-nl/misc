@@ -19,5 +19,5 @@ from decimal import Decimal
 
 def dround(num):
     dec = Decimal(num)
-    adj = abs(dec.adjusted())+1
+    adj = abs(dec.adjusted()) + 1
     return round(num, adj)

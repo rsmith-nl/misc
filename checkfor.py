@@ -9,6 +9,7 @@
 import logging
 import subprocess as sp
 import sys
+
 """
 Note: I don't use this much anymore. The simpler solution is:
 
@@ -34,20 +35,20 @@ def checkfor(args, rv=0):
         rv: Expected return value from evoking the command.
     """
     if isinstance(args, str):
-        if ' ' in args:
-            raise ValueError('no spaces in single command allowed')
+        if " " in args:
+            raise ValueError("no spaces in single command allowed")
         args = [args]
     else:
         if not isinstance(args, (list, tuple)):
-            raise ValueError('args should be a list or tuple')
+            raise ValueError("args should be a list or tuple")
         if not all(isinstance(x, str) for x in args):
-            raise ValueError('args should be a list or tuple of strings')
+            raise ValueError("args should be a list or tuple of strings")
     try:
         cp = sp.run(args)
     except FileNotFoundError as oops:
         logging.error(f'required program "{args[0]}" not found: {oops.strerror}.')
         sys.exit(1)
     if cp.returncode != rv:
-        logging.error(f'returncode {cp.returncode} should be {rv}')
+        logging.error(f"returncode {cp.returncode} should be {rv}")
         sys.exit(1)
     logging.info(f'found required program "{args[0]}"')

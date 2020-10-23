@@ -39,10 +39,10 @@ def rgb2html(r, g, b):  # {{{1
             else:
                 a = int(round(a * 255))
         else:
-            raise ValueError('Arguments must be integers or floats.')
+            raise ValueError("Arguments must be integers or floats.")
         return a
 
     r = chkarg(r)
     g = chkarg(g)
     b = chkarg(b)
-    return f'#{r:02x}{g:02x}{b:02x}'
+    return f"#{r:02x}{g:02x}{b:02x}"

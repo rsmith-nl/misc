@@ -18,4 +18,4 @@ def px2mm(pixels, resolution=1600, precision=2):
     Returns:
         The converted measurement.
     """
-    return round(25.4*pixels/resolution, precision)
+    return round(25.4 * pixels / resolution, precision)

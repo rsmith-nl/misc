@@ -23,11 +23,11 @@ def pdfinfo(path):  # {{{1
     Returns:
         A dict containing the info dictionary, with the keys transformed to lower case.
     """
-    rv = sp.run(['pdfinfo', path], stdout=sp.PIPE, stderr=sp.DEVNULL)
+    rv = sp.run(["pdfinfo", path], stdout=sp.PIPE, stderr=sp.DEVNULL)
     if rv.returncode != 0:
         return {}
     pairs = {
         k.lower(): v.strip()
-        for k, v in [ln.split(':', 1) for ln in rv.stdout.decode('utf-8').splitlines()]
+        for k, v in [ln.split(":", 1) for ln in rv.stdout.decode("utf-8").splitlines()]
     }
     return pairs

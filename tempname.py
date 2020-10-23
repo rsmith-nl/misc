@@ -21,16 +21,16 @@ def tempname(ext=None, num=None):  # {{{1
     Returns:
         Name for a temporary file.
     """
-    bn = base64.b64encode(os.urandom(12), b'__').decode()
+    bn = base64.b64encode(os.urandom(12), b"__").decode()
     if num is not None and num > 0:
-        bn += f'-{num:03d}'
+        bn += f"-{num:03d}"
     if ext:
-        if not ext.startswith('.'):
-            ext = '.' + ext
+        if not ext.startswith("."):
+            ext = "." + ext
         bn += ext
     return bn
 
 
-if __name__ == '__main__':  # Test {{{1
+if __name__ == "__main__":  # Test {{{1
     print(tempname())
-    print(tempname('foo'))
+    print(tempname("foo"))

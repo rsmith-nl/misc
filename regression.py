@@ -38,10 +38,10 @@ def linear(x, y):
     (0.4416491963661775, 63.19357092941999)
     """
     if len(x) != len(y):
-        raise ValueError('y data and x data should have the same size')
+        raise ValueError("y data and x data should have the same size")
     x_mean = stat.mean(x)
     y_mean = stat.mean(y)
-    prod_mean = sum(i*j for i, j in zip(x, y))/len(x)
+    prod_mean = sum(i * j for i, j in zip(x, y)) / len(x)
     x_var = stat.pvariance(x)
     a = (prod_mean - (x_mean * y_mean)) / x_var
     b = y_mean - a * x_mean

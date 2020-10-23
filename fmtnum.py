@@ -10,7 +10,7 @@
 import math
 
 
-def fmtnum(num, unit=''):
+def fmtnum(num, unit=""):
     """Formats a number with numeric prefix.
 
     Arguments:
@@ -20,14 +20,14 @@ def fmtnum(num, unit=''):
     Returns:
         A string containing the formatted number.
     """
-    d = (10, 'd')
-    h = (1e2, 'h')
-    k = (1e3, 'k')
-    M = (1e6, 'M')
-    G = (1e9, 'G')
-    T = (1e12, 'T')
-    P = (1e15, 'P')
-    E = (1e18, 'E')
+    d = (10, "d")
+    h = (1e2, "h")
+    k = (1e3, "k")
+    M = (1e6, "M")
+    G = (1e9, "G")
+    T = (1e12, "T")
+    P = (1e15, "P")
+    E = (1e18, "E")
     table = {
         1: d,
         2: h,
@@ -46,7 +46,7 @@ def fmtnum(num, unit=''):
         15: P,
         16: P,
         17: P,
-        18: E
+        18: E,
     }
     num = float(num)
     exp = math.log10(num)
@@ -57,6 +57,6 @@ def fmtnum(num, unit=''):
     try:
         denum, suffix = table[exp]
         val = num / denum
-        return f'{val:g} {suffix}{unit}'
+        return f"{val:g} {suffix}{unit}"
     except KeyError:
-        return f'{num:g}'
+        return f"{num:g}"

@@ -18,4 +18,4 @@ def splitdict(words):
         items = words.strip().split()
     elif type(words) in (list, tuple):
         items = [w.strip() for w in words]
-    return '{' + ', '.join([f"'{item}': {item}" for item in items]) + '}'
+    return "{" + ", ".join([f"'{item}': {item}" for item in items]) + "}"

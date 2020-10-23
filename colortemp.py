@@ -25,7 +25,7 @@ def cct(r, g, b):
     """
     for v in (r, g, b):
         if v < 0 or v > 255:
-            raise ValueError('color value out of range (0-255)')
+            raise ValueError("color value out of range (0-255)")
     # Map rgb to XYZ. Note that the constants are multiplied by 257,
     # to map 2**8-1 to 2**16-1.
     X = (-36.70474 * r) + (398.15468 * g) + (-245.79737 * b)
@@ -37,7 +37,7 @@ def cct(r, g, b):
     # Use McCanny's formula
     n = (xc - 0.3320) / (0.1858 - yc)
     # Calculate final CCT.
-    rv = (449.0 * n**3) + (3525.0 * n**2) + (6823.3 * n) + 5520.33
+    rv = (449.0 * n ** 3) + (3525.0 * n ** 2) + (6823.3 * n) + 5520.33
     return int(round(rv))
 
 

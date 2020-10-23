@@ -20,8 +20,10 @@ def chunked(iterable, n):  # {{{1
     The second argument to the outer ``iter()`` is crucial to the way this works.
     See the documentation for ``iter()`` for details.
     """
+
     def take(n, iterable):
         return list(it.islice(iterable, n))
+
     return iter(ft.partial(take, n, iter(iterable)), [])
 
 

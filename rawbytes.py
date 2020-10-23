@@ -22,11 +22,11 @@ def rawbytes(s):
     for cp in s:
         num = ord(cp)
         if num < 256:
-            outlist.append(pack('b', num))
+            outlist.append(pack("b", num))
         elif num < 65536:
-            outlist.append(pack('>H', num))
+            outlist.append(pack(">H", num))
         else:
             b = (num & 0xFF0000) >> 16
             H = num & 0xFFFF
-            outlist.append(pack('>bH', b, H))
-    return b''.join(outlist)
+            outlist.append(pack(">bH", b, H))
+    return b"".join(outlist)
