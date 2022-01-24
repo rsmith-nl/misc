@@ -4,7 +4,7 @@
 # Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-08-01T13:31:09+0200
-# Last modified: 2019-08-08T23:05:41+0200
+# Last modified: 2022-01-25T00:31:49+0100
 """Group an iterator into sub-iterators."""
 
 __version__ = "2019.08.08"
@@ -25,6 +25,10 @@ def chunked(iterable, n):  # {{{1
         return list(it.islice(iterable, n))
 
     return iter(ft.partial(take, n, iter(iterable)), [])
+
+
+def chunked2(iterable, n):
+    return iter(ft.partial(lambda m, j: list(it.islice(j, m)), n, iter(iterable)), [])
 
 
 # def chunked2(iterable, n):
