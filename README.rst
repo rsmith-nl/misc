@@ -4,7 +4,10 @@ Miscellaneous modules
 :date: 2015-09-05
 :author: Roland Smith
 
-.. Last modified: 2018-04-21T19:28:40+0200
+.. Last modified: 2022-01-29T22:37:28+0100
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
 
 Introduction
 ============
