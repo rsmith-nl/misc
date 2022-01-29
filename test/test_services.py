@@ -14,11 +14,11 @@ from services import services
 def test_services():
     service = services()
     assert service is not None
-    assert service[22] == 'ssh'
-    assert service[70] == 'gopher'
-    assert service[80] == 'http'
-    assert service[53] == 'domain'
-    assert service[389] == 'ldap'
-    assert service[443] == 'https'
-    assert service[873] == 'rsync'
-    assert service[9418] == 'git'
+    assert service[22] == "ssh"
+    assert service[70] == "gopher"
+    assert service[80] == "http"
+    assert service[53] == "domain"
+    assert service[389] == "ldap"
+    assert service[443] == "https"
+    assert service[873] == "rsync"
+    assert service[9418] == "git"

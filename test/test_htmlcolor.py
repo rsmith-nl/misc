@@ -13,13 +13,13 @@ import pytest
 
 
 def test_rgb():
-    assert rgb2html(0, 0, 0) == '#000000'
-    assert rgb2html(1.0, 0, 0) == '#ff0000'
-    assert rgb2html(1.0, 1.0, 0) == '#ffff00'
-    assert rgb2html(1.0, 1.0, 1.0) == '#ffffff'
-    assert rgb2html(255, 255, 255) == '#ffffff'
+    assert rgb2html(0, 0, 0) == "#000000"
+    assert rgb2html(1.0, 0, 0) == "#ff0000"
+    assert rgb2html(1.0, 1.0, 0) == "#ffff00"
+    assert rgb2html(1.0, 1.0, 1.0) == "#ffffff"
+    assert rgb2html(255, 255, 255) == "#ffffff"
 
 
 def test_illegal_values():
     with pytest.raises(ValueError):
-        rgb2html(12, 234, 'a')
+        rgb2html(12, 234, "a")

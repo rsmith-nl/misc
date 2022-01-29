@@ -12,7 +12,7 @@ from filedate import fcdate, iso8601
 
 
 def test_filedate():
-    rv = fcdate('nameddict.py')
-    assert iso8601(rv) == '2015-04-10T08:47:11+0200'
-    rv = fcdate('nonexistant')
+    rv = fcdate("nameddict.py")
+    assert iso8601(rv) == "2015-04-10T08:47:11+0200"
+    rv = fcdate("nonexistant")
     assert rv is None

@@ -12,13 +12,13 @@ from xpand import xpand
 
 
 def test_xpand():
-    rv = xpand('h*')
-    assert rv == ['htmlcolor.py', 'hertz.py', 'humidity.py']
-    rv = xpand('foo')
-    assert rv == ['foo']
+    rv = xpand("h*")
+    assert rv == ["htmlcolor.py", "hertz.py", "humidity.py"]
+    rv = xpand("foo")
+    assert rv == ["foo"]
     rv = xpand([])
     assert xpand([]) == []
-    rv = xpand('')
-    assert rv == ['']
-    rv = xpand([''])
-    assert rv == ['']
+    rv = xpand("")
+    assert rv == [""]
+    rv = xpand([""])
+    assert rv == [""]
