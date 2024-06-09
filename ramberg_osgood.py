@@ -4,13 +4,13 @@
 # Copyright © 2024 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2024-05-27T21:19:29+0200
-# Last modified: 2024-05-27T21:39:03+0200
+# Last modified: 2024-06-09T08:15:25+0200
 
 import math
 import os
 
 
-def calculix_plastic(Rp, Rm, em, steps=6):
+def calculix_plastic(Rp, Rm, em, steps=6, temp=293):
     """
     Calculate *PLASTIC properties for CalculiX.
     The calculation is basicall unit agnostic.
@@ -22,6 +22,7 @@ def calculix_plastic(Rp, Rm, em, steps=6):
         Rm: failure stress
         em: failure strain (dimensionless)
         steps: number of steps in the table
+        temp: temperature for which the properties are valid
 
     Returns:
         A string containing the *PLASTIC data.
@@ -33,5 +34,5 @@ def calculix_plastic(Rp, Rm, em, steps=6):
     rv = ["*PLASTIC"]
     for j in range(steps+1):
         s = Rp + j * iv
-        rv.append(f"{s:g},{round((s/H)**(1/n), 5)},293")
+        rv.append(f"{s:g},{round((s/H)**(1/n), 5)},{temp}")
     return os.linesep.join(rv) + os.linesep
