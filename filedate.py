@@ -4,7 +4,7 @@
 # Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-17T23:30:49+0100
-# Last modified: 2024-06-09T08:29:46+0200
+# Last modified: 2024-06-09T09:02:47+0200
 
 from datetime import datetime
 from dateutil.tz import gettz
@@ -25,6 +25,11 @@ def fcdate(name, tz=_here):
 
     Returns:
         A datetime object.
+
+    Examples:
+    >>> from filedate import fcdate
+    >>> fcdate("filedate.py")
+    datetime.datetime(2024, 6, 9, 8, 29, 46, 220275, tzinfo=tzfile('/etc/localtime'))
     """
     if not os.path.exists(name):
         return None
@@ -44,10 +49,15 @@ def gitdate(path, tz=_here):
 
     Arguments:
         path (str): Path to the file to query
-        tz: Local timezone. Defaults to Europe/Amsterdam
+        tz: Local timezone. Defaults to the local timezone.
 
     Returns:
-        A datetime object.
+        A datetime.datetime object.
+
+    Examples:
+    >>> from filedate import gitdate
+    >>> gitdate("filedate.py")
+    datetime.datetime(2015, 9, 5, 14, 29, 19, tzinfo=tzfile('/etc/localtime'))
     """
     if not os.path.exists(".git"):
         return None
@@ -60,14 +70,21 @@ def gitdate(path, tz=_here):
 
 
 def iso8601(dt):
+    """
+    Converts a datetime object to an ISO 8601 formatted date string.
+
+    Arguments:
+        dt (datatime.datetime): Datetime to convert.
+
+    Returns:
+        The datetime object as an ISO 8601 formatted date string.
+
+    Examples:
+    >>> from filedate import gitdate, iso8601
+    >>> iso8601(gitdate("filedate.py"))
+    '2015-09-05T14:29:19+0200'
+    """
     if dt:
         return dt.strftime("%FT%T%z")
     else:
         return None
-
-
-# Tests
-if __name__ == "__main__":
-    for fn in ["nameddict.py", "nonexistent"]:
-        print(fn, "(file)", iso8601(fcdate(fn)))
-        print(fn, "(git)", iso8601(gitdate(fn)))

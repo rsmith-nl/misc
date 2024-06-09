@@ -4,7 +4,7 @@
 # Copyright © 2017 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2017-12-31T14:19:06+0100
-# Last modified: 2018-04-21T18:47:18+0200
+# Last modified: 2024-06-09T08:47:55+0200
 """
 Convert r,b,g values to a color temperature.
 
@@ -22,6 +22,17 @@ def cct(r, g, b):
 
     Returns:
         Color temperature in Kelvin.
+
+    Examples:
+    >>> import colortemp
+    >>> colortemp.cct(255,0,0)
+    40943
+    >>> colortemp.cct(0,255,0)
+    3785
+    >>> colortemp.cct(0,0,255)
+    1672
+    >>> colortemp.cct(255,255,255)
+    8890
     """
     for v in (r, g, b):
         if v < 0 or v > 255:
@@ -51,6 +62,17 @@ def lux(r, g, b):
 
     Returns:
         Illuminance in Lux.
+
+    Examples:
+    >>> import colortemp
+    >>> colortemp.lux(255,0,0)
+    21277
+    >>> colortemp.lux(0,255,0)
+    103438
+    >>> colortemp.lux(0,0,255)
+    47966
+    >>> colortemp.lux(255,255,255)
+    34196
     """
     # Again, the constants are multiplied by 257.
     illuminance = (-83.43762 * r) + (405.64109 * g) + (-188.10087 * b)

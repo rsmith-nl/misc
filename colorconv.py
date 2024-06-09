@@ -3,7 +3,8 @@
 #
 # Copyright © 2022 R.F. Smith <rsmith@xs4all.nl>
 # Created: 2022-04-03T11:07:12+0200
-# Last modified: 2022-04-03T12:12:30+0200
+# Last modified: 2024-06-09T08:40:35+0200
+
 
 def normalize(c, name):
     """
@@ -18,14 +19,14 @@ def normalize(c, name):
     """
     if isinstance(c, float):
         if c < 0.0 or c > 1.0:
-            raise(ValueError, f"float {name} color value “{c}” is out of bounds")
+            raise (ValueError, f"float {name} color value “{c}” is out of bounds")
         return c
     elif isinstance(c, int):
         if c < 0 or c > 255:
-            raise(ValueError, f"integer {name} color value “{c}” is out of bounds")
-        return c/255.0
+            raise (ValueError, f"integer {name} color value “{c}” is out of bounds")
+        return c / 255.0
     else:
-        raise(ValueError, f"{name} color value must be a float or integer")
+        raise (ValueError, f"{name} color value must be a float or integer")
 
 
 def cmyk2rgb(c, m, y, k):
@@ -41,14 +42,21 @@ def cmyk2rgb(c, m, y, k):
 
     Returns:
         A 3-tuple (R, G, B) of floats in the range 0−1 inclusive.
+
+    Examples:
+    >>> from colorconv import cmyk2rgb
+    >>> cmyk2rgb(0.22, 0.15, 0.07, 0.54)
+    (0.3588, 0.39099999999999996, 0.42779999999999996)
+    >>> [int(255*j) for j in cmyk2rgb(0.22, 0.15, 0.07, 0.54)]
+    [91, 99, 109]
     """
     c = normalize(c, "cyan")
     m = normalize(m, "magenta")
     y = normalize(y, "yellow")
     k = normalize(k, "black")
-    r = (1-c)*(1-k)
-    g = (1-m)*(1-k)
-    b = (1-y)*(1-k)
+    r = (1 - c) * (1 - k)
+    g = (1 - m) * (1 - k)
+    b = (1 - y) * (1 - k)
     return r, g, b
 
 

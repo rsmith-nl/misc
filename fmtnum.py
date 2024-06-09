@@ -4,7 +4,7 @@
 # Copyright © 2016 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2016-05-23T23:12:24+0200
-# Last modified: 2018-07-08T11:34:08+0200
+# Last modified: 2024-06-09T09:27:12+0200
 """Format numbers with metric prefixes."""
 
 import math
@@ -19,6 +19,15 @@ def fmtnum(num, unit=""):
 
     Returns:
         A string containing the formatted number.
+
+    Examples:
+    >>> from fmtnum import fmtnum
+    >>> fmtnum(1.382e7, "Pa")
+    '13.82 MPa'
+    >>> fmtnum(3527, "g")
+    '3.527 kg'
+    >>> fmtnum(3.527, "kg")
+    '3.527'
     """
     d = (10, "d")
     h = (1e2, "h")
