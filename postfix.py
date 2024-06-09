@@ -4,7 +4,7 @@
 # Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-07T13:30:14+0100
-# Last modified: 2024-06-09T08:31:33+0200
+# Last modified: 2024-06-09T17:34:56+0200
 
 import operator
 import math
@@ -39,7 +39,7 @@ _consts = {"e": _e, "pi": _pi}
 _ckeys = tuple(_consts.keys())
 
 
-def postfix(expression):  # {{{1
+def postfix(expression):
     """
     Evaluate a postfix expression.
 
@@ -50,6 +50,17 @@ def postfix(expression):  # {{{1
 
     Returns:
         The result of the expression.
+
+    Examples:
+    >>> from postfix import postfix
+    >>> postfix("1 2 +")
+    3.0
+    >>> postfix("1 2 /")
+    0.5
+    >>> postfix("1 2 + 3 /")
+    1.0
+    >>> postfix("1")
+    1.0
     """
     if isinstance(expression, str):
         expression = expression.split()
