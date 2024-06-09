@@ -4,7 +4,7 @@
 # Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2015-04-01T22:23:24+0200
-# Last modified: 2024-06-09T08:30:30+0200
+# Last modified: 2024-06-09T17:40:51+0200
 """Conversion routines for HTML colors."""
 
 
@@ -23,6 +23,21 @@ def rgb2html(r, g, b):  # {{{1
 
     Exceptions:
         Raises a ValueError if any of the arguments is not an int or a float.
+
+    Examples:
+    >>> from htmlcolor import rgb2html
+    >>> rgb2html(255,0,0)
+    '#ff0000'
+    >>> rgb2html(1.0,0,0)
+    '#ff0000'
+    >>> rgb2html(0,255,0)
+    '#00ff00'
+    >>> rgb2html(0,1.0,0)
+    '#00ff00'
+    >>> rgb2html(0,0,255)
+    '#0000ff'
+    >>> rgb2html(0,0,1.0)
+    '#0000ff'
     """
 
     def chkarg(a):
