@@ -4,7 +4,7 @@
 # Copyright © 2024 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2024-05-27T21:19:29+0200
-# Last modified: 2024-06-09T08:22:29+0200
+# Last modified: 2024-06-09T17:10:02+0200
 
 import math
 import os

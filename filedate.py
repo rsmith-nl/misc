@@ -4,7 +4,7 @@
 # Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-17T23:30:49+0100
-# Last modified: 2024-06-09T09:02:47+0200
+# Last modified: 2024-06-09T17:09:13+0200
 
 from datetime import datetime
 from dateutil.tz import gettz
@@ -28,8 +28,8 @@ def fcdate(name, tz=_here):
 
     Examples:
     >>> from filedate import fcdate
-    >>> fcdate("filedate.py")
-    datetime.datetime(2024, 6, 9, 8, 29, 46, 220275, tzinfo=tzfile('/etc/localtime'))
+    >>> fcdate("nameddict.py")
+    datetime.datetime(2024, 6, 9, 8, 30, 49, 354261, tzinfo=tzfile('/etc/localtime'))
     """
     if not os.path.exists(name):
         return None

@@ -4,17 +4,11 @@
 # Copyright © 2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2019-07-13T12:43:16+0200
-# Last modified: 2024-06-09T08:34:46+0200
+# Last modified: 2024-06-09T17:04:32+0200
 """
 Predefined ANSI escape codes.
 
 https://en.wikipedia.org/wiki/ANSI_escape_code
-
-Example: print red text
->>> import ansi
->>> ansi.fgcolor.brightred+"Danger, Will Robinson!"+ansi.fgcolor.reset
-'\x1b[1;31mDanger, Will Robinson!\x1b[0m'
->>> print(ansi.fgcolor.brightred+"Danger, Will Robinson!"+ansi.fgcolor.reset)
 """
 
 from types import SimpleNamespace

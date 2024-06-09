@@ -3,7 +3,7 @@
 #
 # Copyright © 2022 R.F. Smith <rsmith@xs4all.nl>
 # Created: 2022-04-03T11:07:12+0200
-# Last modified: 2024-06-09T08:40:35+0200
+# Last modified: 2024-06-09T17:00:51+0200
 
 
 def normalize(c, name):
@@ -44,10 +44,10 @@ def cmyk2rgb(c, m, y, k):
         A 3-tuple (R, G, B) of floats in the range 0−1 inclusive.
 
     Examples:
-    >>> from colorconv import cmyk2rgb
-    >>> cmyk2rgb(0.22, 0.15, 0.07, 0.54)
+    >>> import colorconv
+    >>> colorconv.cmyk2rgb(0.22, 0.15, 0.07, 0.54)
     (0.3588, 0.39099999999999996, 0.42779999999999996)
-    >>> [int(255*j) for j in cmyk2rgb(0.22, 0.15, 0.07, 0.54)]
+    >>> [int(255*j) for j in colorconv.cmyk2rgb(0.22, 0.15, 0.07, 0.54)]
     [91, 99, 109]
     """
     c = normalize(c, "cyan")
