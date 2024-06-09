@@ -1,10 +1,10 @@
 # file: htmlcolor.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2014-2017 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2015-04-01T22:23:24+0200
-# Last modified: 2018-07-08T11:35:20+0200
+# Last modified: 2024-06-09T08:30:30+0200
 """Conversion routines for HTML colors."""
 
 

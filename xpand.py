@@ -1,10 +1,10 @@
 # file: xpand.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2013-2017 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2013 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2013-08-13T23:13:48+0200
-# Last modified: 2018-04-17T20:45:41+0200
+# Last modified: 2024-06-09T08:32:04+0200
 """Function to expand filename globs."""
 
 import glob

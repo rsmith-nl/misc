@@ -1,10 +1,10 @@
 # file: checkfor.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2012-2018 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2012 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2012-12-13T01:39:03+01:00
-# Last modified: 2019-08-03T20:21:33+0200
+# Last modified: 2024-06-09T08:29:24+0200
 
 import logging
 import subprocess as sp

@@ -1,10 +1,10 @@
 # file: pdfinfo.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2017-2019 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2017 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2017-09-10T16:53:54+0200
-# Last modified: 2019-02-26T18:56:11+0100
+# Last modified: 2024-06-09T08:31:19+0200
 """Retrieve info dictionary from a PDF file."""
 
 import subprocess as sp

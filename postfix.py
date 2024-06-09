@@ -1,10 +1,10 @@
 # file: postfix.py
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
-# Copyright © 2014-2017 R.F. Smith <rsmith@xs4all.nl>.
+# Copyright © 2014 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2014-12-07T13:30:14+0100
-# Last modified: 2018-04-17T20:43:47+0200
+# Last modified: 2024-06-09T08:31:33+0200
 
 import operator
 import math
