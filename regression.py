@@ -4,7 +4,7 @@
 # Copyright © 2019 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2019-08-03T18:47:27+0200
-# Last modified: 2019-08-24T23:39:03+0200
+# Last modified: 2024-06-09T09:31:40+0200
 """Linear regression.
 
 Inspired by: http://www.codedrome.com/linear-regression-in-python/
@@ -23,12 +23,12 @@ def linear(x, y):
         y (sequence): dependant data.
 
     Returns:
-        the coefficients of y = a·x + b.
+        the coefficients (a, b) of y = a·x + b.
 
     Examples:
     >>> x = (10, 20, 40, 45, 60, 65, 75, 80)
     >>> y = (32, 44, 68, 74, 92, 98, 110, 116)
-    >>> linea(x, y)
+    >>> linear(x, y)
     (1.2, 20.0)
     >>> y = [40, 40, 60, 80, 90, 110, 100, 130]
     >>> linear(x, y)
