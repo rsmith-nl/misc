@@ -4,7 +4,7 @@
 # Copyright © 2018 R.F. Smith <rsmith@xs4all.nl>.
 # SPDX-License-Identifier: MIT
 # Created: 2018-04-21T19:07:27+0200
-# Last modified: 2019-07-13T10:16:59+0200
+# Last modified: 2024-06-09T17:53:25+0200
 """
 Calculate the mean deviation of samples.
 
@@ -28,5 +28,11 @@ def amd(arr):
 
     Returns:
         The absolute mean deviation.
+
+    Examples:
+    >>> from mean_deviation_np import amd
+    >>> import numpy as np
+    >>> amd(np.array([13,6,12,10,11,9,10,8,12,9]))
+    1.6
     """
     return np.mean(np.abs(arr - np.mean(arr)))
