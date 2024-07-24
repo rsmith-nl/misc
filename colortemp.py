@@ -48,7 +48,7 @@ def cct(r, g, b):
     # Use McCanny's formula
     n = (xc - 0.3320) / (0.1858 - yc)
     # Calculate final CCT.
-    rv = (449.0 * n ** 3) + (3525.0 * n ** 2) + (6823.3 * n) + 5520.33
+    rv = (449.0 * n**3) + (3525.0 * n**2) + (6823.3 * n) + 5520.33
     return int(round(rv))
 
 

@@ -30,5 +30,5 @@ def services(filename="/etc/services"):  # {{{1
     """
     with open(filename) as serv:
         data = serv.read()
-    matches = re.findall("\n"+r"(\S+)\s+(\d+)/", data)
+    matches = re.findall("\n" + r"(\S+)\s+(\d+)/", data)
     return {int(num): name for name, num in set(matches)}

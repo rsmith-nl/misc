@@ -45,12 +45,12 @@ def calculix_plastic(Rp, Rm, em, steps=6, temp=293):
     932.5,0.03929,293
     960,0.1,293
     """
-    n = math.log(Rm/Rp)/math.log(em/0.002)
-    H = Rp/(0.002**n)
+    n = math.log(Rm / Rp) / math.log(em / 0.002)
+    H = Rp / (0.002**n)
     rng = Rm - Rp
-    iv = rng/steps
+    iv = rng / steps
     rv = ["*PLASTIC"]
-    for j in range(steps+1):
+    for j in range(steps + 1):
         s = Rp + j * iv
         rv.append(f"{s:g},{round((s/H)**(1/n), 5)},{temp}")
     return os.linesep.join(rv) + os.linesep
